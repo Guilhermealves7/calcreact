@@ -15,10 +15,7 @@ export default function App() {
 
 
   function calculator(){
-    const splitNumbers = currentNumber.split(' ')
-    const fistNumber = parseFloat(splitNumbers[0])
-    const lastNumber = parseFloat(splitNumbers[2])
-    const operator = splitNumbers[1]
+    setCurrentNumber(eval(currentNumber))
 
     switch(operator){
       case '+':
@@ -44,7 +41,7 @@ export default function App() {
     }
     switch(buttonPressed){
       case 'DEL':
-        setCurrentNumber(currentNumber.substring(0, (currentNumber.length -1)))
+        setCurrentNumber(currentNumber.substring(0, (currentNumber.length -2)))
         return
       case 'AC':
         setLastNumber("")
